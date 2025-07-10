@@ -53,15 +53,24 @@ namespace Calculadora
         {
             StringBuilder stringBuilder = new StringBuilder();
             // Append digits from left to right (reverse of how they were calculated)
-            for (int i = resultado.Length - 1; i >= 0; i--)
+            int i = resultado.Length - 1;
+            while (i >= 0 && resultado[i] == 0)
             {
-                if (!(stringBuilder.Length == 0 && resultado[i] == 0))
-                {
-                    return stringBuilder.Append(resultado[i]);
-                }
+                i--;
             }
 
-            return new StringBuilder();
+            if (i == -1)
+            {
+                return new StringBuilder("0");
+            }
+
+            while (i >= 0)
+            {
+                stringBuilder.Append(resultado[i]);
+                i--;
+            }
+
+            return stringBuilder;
         }
     }
 

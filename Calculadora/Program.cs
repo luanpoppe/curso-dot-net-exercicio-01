@@ -7,8 +7,8 @@ namespace Calculadora
     {
         public static void Main()
         {
-            string numero1 = File.ReadAllText("numero1.txt");
-            string numero2 = File.ReadAllText("numero2.txt");
+            string numero1 = File.ReadAllText("D:/repositorios/raro-c#/atividade-01/numero1.txt");
+            string numero2 = File.ReadAllText("D:/repositorios/raro-c#/atividade-01/numero2.txt");
 
             Console.WriteLine("Escolha a operacao:");
             Console.WriteLine("1. Adicao");
@@ -43,7 +43,7 @@ namespace Calculadora
                     return;
             }
 
-            File.WriteAllText("resultado.txt", resultado);
+            File.WriteAllText("D:/repositorios/raro-c#/atividade-01/resultado.txt", resultado);
             Console.WriteLine("Resultado salvo no arquivo resultado.txt");
         }
     }
